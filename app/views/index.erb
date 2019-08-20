@@ -2,11 +2,11 @@
 
 <ol>
 <% @articles.each do |article| %>
-  <li>
-    <a href="/articles/<%= article.id %>">
-      <%= article.title %>
-    </a>
-    <p><%= article.content %></p>
-  </li>
+<li>
+  <a href="/articles/<%= article.id %>">
+    <%= article.title %>
+  </a>
+  <p><%= article.content %></p>
+</li>
 <% end %>
 </ol>
