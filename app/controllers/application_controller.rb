@@ -32,28 +32,28 @@ class ApplicationController < Sinatra::Base
 
     redirect to "/articles/#{@article.id}"
 
-    end
+  end
 
-    get '/articles/:id/edit' do
-      @article = Article.find(params[:id])
+  get '/articles/:id/edit' do
+    @article = Article.find(params[:id])
 
-      erb :edit
+    erb :edit
 
-    end
+  end
 
-    patch '/articles/:id' do
-      @article = Article.find(params[:id])
-      @article.title = params[:title]
-      @article.content = params[:content]
-      @article.save
+  patch '/articles/:id' do
+    @article = Article.find(params[:id])
+    @article.title = params[:title]
+    @article.content = params[:content]
+    @article.save
 
-      redirect "/articles/#{@article.id}"
-end
+    redirect "/articles/#{@article.id}"
+  end
 
-delete '/articles/:id' do
-   Article.destroy(params[:id])
-   redirect '/articles'
- end
+  delete '/articles/:id' do
+    Article.destroy(params[:id])
+    redirect '/articles'
+  end
 
 
 
